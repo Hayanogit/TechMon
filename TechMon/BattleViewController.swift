@@ -71,6 +71,32 @@ class BattleViewController: UIViewController {
         TechMonManager.damageAnimation(imageView: enemyImageView)
         TechMonManager.playSE(fileName: "SE_attack")
         enemy.currentHP -= player.attackPoint
+        player.currentTP += 5
+        if player.currentTP >= player.maxTP {
+            player.currentTP = player.maxTP
+        }
+        updateUI()
+        if enemy.currentHP <= 0 {
+            finishBattle(vanishImageView: enemyImageView, isPlayerWin: true)
+        }
+    }
+    
+    @IBAction func chargeAction(){
+        TechMonManager.playSE(fileName: "SE_charge")
+        player.currentTP += 20
+        if player.currentTP >= player.maxTP {
+            player.currentTP = player.maxTP
+        }
+        updateUI()
+    }
+    
+    @IBAction func fireAction(){
+        if player.currentTP >= player.maxTP{
+            TechMonManager.damageAnimation(imageView: enemyImageView)
+            TechMonManager.playSE(fileName: "SE_fire")
+            enemy.currentHP -= player.fireAttackPoint
+            player.currentTP = 0
+        }
         updateUI()
         if enemy.currentHP <= 0 {
             finishBattle(vanishImageView: enemyImageView, isPlayerWin: true)
