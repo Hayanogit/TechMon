@@ -67,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-306" y="54"/>
+            <point key="canvasLocation" x="-80" y="59"/>
         </scene>
         <!--Battle View Controller-->
         <scene sceneID="Cnq-nq-XaB">
@@ -93,16 +93,6 @@
                                 <rect key="frame" x="230" y="447" width="147" height="167"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQR-h3-0sB">
-                                <rect key="frame" x="70" y="697" width="252" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="こうげき">
-                                    <backgroundConfiguration key="background" image="gold_button.png"/>
-                                    <fontDescription key="titleFontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="23"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fub-2Y-CY3">
                                 <rect key="frame" x="177" y="180" width="200" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -153,10 +143,31 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQR-h3-0sB">
+                                <rect key="frame" x="16" y="697" width="122" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="こうげき">
+                                    <backgroundConfiguration key="background" image="gold_button.png"/>
+                                    <fontDescription key="titleFontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="23"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="attackAction" destination="Tb1-Mx-uTy" eventType="touchUpInside" id="ieD-VY-HIu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LxJ-cg-zwn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="enemyHPBar" destination="huv-4r-Eqh" id="b5e-Pc-xA9"/>
+                        <outlet property="enemyImageView" destination="G6n-Rt-smJ" id="c5P-jo-zy7"/>
+                        <outlet property="enemyNameLabel" destination="pHJ-Pu-m6J" id="yoW-Xg-f1E"/>
+                        <outlet property="playerHPBar" destination="Xmv-C2-5hM" id="T4L-gB-Cp9"/>
+                        <outlet property="playerImageView" destination="eq3-mB-bxK" id="IoE-Pn-f2p"/>
+                        <outlet property="playerNameLabel" destination="2j8-oY-bXc" id="c03-1D-gZe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YL-gI-KxT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
